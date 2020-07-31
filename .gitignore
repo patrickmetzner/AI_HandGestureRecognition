@@ -1,0 +1,8 @@
+HandGestureRecognition/.idea
+HandGestureRecognition/.ipynb_checkpoints
+HandGestureRecognition/Include
+HandGestureRecognition/Lib
+HandGestureRecognition/Scripts
+HandGestureRecognition/images/trainingImages
+HandGestureRecognition/images/validationImages
+HandGestureRecognition/images_All.Images.rar

@@ -1,0 +1,72 @@
+import itertools
+import numpy as np
+import tensorflow as tf
+from tensorflow.keras.models import load_model
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
+from sklearn.metrics import confusion_matrix
+import matplotlib.pyplot as plt
+
+numberOfTestImages = 30
+imageWidth = imageHeight = 224
+imageLabels = ["thumbsUp", "thumbsDown", "noHand"]
+testPath = 'images/testImages'
+batchSize = 10
+testBatches = ImageDataGenerator(preprocessing_function=tf.keras.applications.vgg16.preprocess_input) \
+    .flow_from_directory(directory=testPath, target_size=(imageWidth, imageHeight),
+                         classes=["thumbsUp", "thumbsDown", "noHand"], batch_size=batchSize, shuffle=False)
+
+assert testBatches.n == numberOfTestImages
+assert testBatches.num_classes == len(imageLabels)
+
+myNeuralNetwork = load_model('TrainedNeuralNetworks/HandGestureRecognition_UpDownNone_v2.h5')
+
+
+# Function to plot images in 1x10 grid to better visualize the data
+def plotImages(imagesArray):
+    figure, axes = plt.subplots(1, 10, figsize=(10, 2))
+    axes = axes.flatten()
+    for img, ax in zip(imagesArray, axes):
+        ax.imshow(img)
+        ax.axis('off')
+    plt.tight_layout()
+    plt.show()
+
+
+testImages, testLabels = next(testBatches)
+plotImages(testImages)
+print(testLabels)
+
+predictions = myNeuralNetwork.predict(x=testBatches, steps=len(testBatches), verbose=0)
+
+myConfusionMatrix = confusion_matrix(y_true=testBatches.classes, y_pred=np.argmax(predictions, axis=-1))
+
+
+# Function to print and plot the confusion matrix. Normalization can be applied by setting `normalize=True`.
+def plot_confusion_matrix(cm, classes, normalize=False, title='Confusion Matrix', cmap=plt.cm.Blues):
+    plt.imshow(cm, interpolation='nearest', cmap=cmap)
+    plt.title(title)
+    plt.colorbar()
+    tick_marks = np.arange(len(classes))
+    plt.xticks(tick_marks, classes, rotation=45)
+    plt.yticks(tick_marks, classes)
+
+    if normalize:
+        cm = cm.astype('float') / cm.sum(axis=1)[:, np.newaxis]
+        print("Normalized confusion matrix")
+    else:
+        print('Confusion matrix, without normalization')
+
+    print(cm)
+
+    threshold = cm.max() / 2.
+    for i, j in itertools.product(range(cm.shape[0]), range(cm.shape[1])):
+        plt.text(j, i, cm[i, j], horizontalalignment="center", color="white" if cm[i, j] > threshold else "black")
+
+    plt.tight_layout()
+    plt.ylabel('True label')
+    plt.xlabel('Predicted label')
+
+
+plot_confusion_matrix(cm=myConfusionMatrix, classes=imageLabels, title='Confusion Matrix')
+
+# Run next program? os.system("Image_Text.py")
