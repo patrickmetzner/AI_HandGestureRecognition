@@ -99,5 +99,17 @@ To run **HandGestureRecognition_Test.py** you can open the **Windows Command Pro
 Observation: If you opted to install the requirements locally in your computer, you can junt double click **HandGestureRecognition_Test.py**)
 
 
+## Training your own **Neural Network**
 
-In case you want to gather your own images and train your own **Neural Network**, you can
+In case you want to gather your own images and train your own **Neural Network**, you can run **GetImages.py** until you get a reasonable number of images (at least 1.000 of each class is recomended), open the **NetworkTraining.py** file and change the variables in the lines **18**, **19** and **20** accordingly (image below). 
+
+**Note that the total number of images gathered must be greater that the sum of these three variables.**
+
+<img src="https://github.com/patrickmetzner/AI_HandGestureRecognition/blob/master/HandGestureRecognition/README_images/TrainingVariables.PNG" width=200>
+
+
+The new Neural Network will be saved as **HandGestureRecognition_New.h5** inside the **TrainedNeuralNetworks** directory.
+
+To run **HandGestureRecognition.py** with your new Neural Network, change the name of the loaded Neural Network in **line 26** accordingly (image below).
+
+<img src="https://github.com/patrickmetzner/AI_HandGestureRecognition/blob/master/HandGestureRecognition/README_images/LoadNeuralNetwork.PNG">
