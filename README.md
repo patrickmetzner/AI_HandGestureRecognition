@@ -62,7 +62,7 @@ After having Python installed:
 
 **1.** Copy the Python files (**GetImages.py**, **NetworkTraining.py**, **HandGestureRecognition_Test.py**, **HandGestureRecognition.py** and **RunProject_CreateVENV.py**), together with **requirements.txt** and the **TrainedNeuralNetworks** folder to a directory in your computer (everything should be in the the same directory).
 
-**2.** Run **RunProject_CreateVENV.py**. This file will create a virtual environment, install all the requirements listed in **requirements.txt** and then run **HandGestureRecognition.py**.
+**2.** Run (double click) **RunProject_CreateVENV.py**. This file will create a virtual environment, install all the requirements listed in **requirements.txt** and then run **HandGestureRecognition.py** automatically.
 
 
 **Alternative option to run the project:**
@@ -91,7 +91,9 @@ After following **step 1** of the list above, open the **Windows Command Prompt*
 
 In case you want to test the [**HandGestureRecognition_UpDownNone_20k.h5**](https://github.com/patrickmetzner/AI_HandGestureRecognition/blob/master/HandGestureRecognition/TrainedNeuralNetworks/HandGestureRecognition_UpDownNone_20k.h5) **Neural Network**, you can copy the [**images/**](https://github.com/patrickmetzner/AI_HandGestureRecognition/tree/master/HandGestureRecognition/images/testImages) folder to the **SAME DIRECTORY** where all the **.py** files are located and run **HandGestureRecognition_Test.py**.
 
-Inside the [**images/**](https://github.com/patrickmetzner/AI_HandGestureRecognition/tree/master/HandGestureRecognition/images/testImages) folder you can find 30 test images (10 for each image class). In relationship with the **.py** files, the images should be in the following paths:
+Inside the [**images/**](https://github.com/patrickmetzner/AI_HandGestureRecognition/tree/master/HandGestureRecognition/images/testImages) folder you can find 30 test images (10 for each image class). 
+
+In relationship with the **.py** files, the images should be in the following paths:
 
 **..\images\testImages\noHand**
 
@@ -102,18 +104,18 @@ Inside the [**images/**](https://github.com/patrickmetzner/AI_HandGestureRecogni
 
 To run **HandGestureRecognition_Test.py** you can open the **Windows Command Prompt** and run the following commands:
 
-**1.** Activate a virtual environment created previously (optional):
+**1.** Activate a virtual environment created previously (if opted to create virtual environment):
 > HandGestureRecognition_venv\Scripts\activate.bat
 
 **2.** Run **HandGestureRecognition_Test.py**:
 > HandGestureRecognition_Test.py
 
-Observation: If you opted to install the requirements locally in your computer, you can junt double click **HandGestureRecognition_Test.py**)
+Observation: If you opted to install the requirements locally in your computer, you can just double click **HandGestureRecognition_Test.py**)
 
 
 ## Training your own **Neural Network**
 
-In case you want to gather your own images and train your own **Neural Network**, you can run **GetImages.py** until you get a reasonable number of images (at least 1.000 of each class is recomended), open the **NetworkTraining.py** file and change the variables in the lines **18**, **19** and **20** accordingly (image below). 
+In case you want to gather your own images and train your own **Neural Network**, you can run **GetImages.py** until you get a reasonable number of images (at least 1.000 of each class is recommended), open the **NetworkTraining.py** file and change the variables in the **lines 18**, **19** and **20** accordingly (image below). 
 
 **Note that the total number of images gathered must be greater that the sum of these three variables.**
 
@@ -127,4 +129,4 @@ To run **HandGestureRecognition.py** with your new Neural Network, change the na
 <img src="https://github.com/patrickmetzner/AI_HandGestureRecognition/blob/master/HandGestureRecognition/README_images/LoadNeuralNetwork.PNG">
 
 
-**ATENTION!** - Depending on your computer and camera settings, it might be necessary to change **line 22** of the code in **HandGestureRecognition.py** and **line 28** of the code in **GetImages.py** (image shown previously).
+**ATTENTION!** - Depending on your computer and camera settings, it might be necessary to change **line 22** of the code in **HandGestureRecognition.py** and **line 28** of the code in **GetImages.py** (image shown previously).
