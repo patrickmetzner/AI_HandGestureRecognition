@@ -45,7 +45,7 @@ This is the program used to recognise the three classes previously mentioned. A 
 
 For the particular case of the [**HandGestureRecognition_UpDownNone_20k.h5**](https://github.com/patrickmetzner/AI_HandGestureRecognition/blob/master/HandGestureRecognition/TrainedNeuralNetworks/HandGestureRecognition_UpDownNone_20k.h5) **Neural Network**, a set of **18.000** images were used to train the network, **3.000** images were used as validation to track the progress of each epoch (**val_loss** and ** val_accuracy**) and **3.000** images were used to test the result.
 
-The training progress, as well as the **Confusion Matrix** can be seen below. For the specific set of images used to test the **Neural Network**, it was capable of predictiong **1.000 out of 1.000 thumbsUp** images, **998 out of 1.000 thumbsDown** images and **987 out of 1.000 noHand** images.
+The training progress, as well as the **Confusion Matrix** can be seen below. For the specific set of images used to test the **Neural Network**, it was capable of predicting **1.000 out of 1.000 thumbsUp** images, **998 out of 1.000 thumbsDown** images and **987 out of 1.000 noHand** images (as seen in the confusion matrix).
 
 <img src="https://github.com/patrickmetzner/AI_HandGestureRecognition/blob/master/HandGestureRecognition/README_images/NeuralNetwork_TrainingProgress.PNG"> 
 
