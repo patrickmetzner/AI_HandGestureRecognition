@@ -82,12 +82,11 @@ In case you want to test the [**HandGestureRecognition_UpDownNone_20k.h5**](http
 Inside the [**images/**](https://github.com/patrickmetzner/AI_HandGestureRecognition/tree/master/HandGestureRecognition/images/testImages) folder you can find 30 test images (10 for each image class). In relationship with the **.py** files, the images should be in the following paths:
 
 **..\images\testImages\noHand**
+
 **..\images\testImages\thumbsDown**
+
 **..\images\testImages\thumbsUp**
 
----
-
----
 
 To run **HandGestureRecognition_Test.py** you can open the **Windows Command Prompt** and run the following commands:
 

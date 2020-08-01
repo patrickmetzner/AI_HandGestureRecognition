@@ -169,6 +169,6 @@ plot_confusion_matrix(cm=myConfusionMatrix, classes=imageLabels, title='Confusio
 if os.path.isdir('TrainedNeuralNetworks') is False:
     os.makedirs('TrainedNeuralNetworks')
 
-myNeuralNetwork.save('TrainedNeuralNetworks/HandGestureRecognition_UpDownNone.h5')
+myNeuralNetwork.save('TrainedNeuralNetworks/HandGestureRecognition_New.h5')
 
 # Run next program? os.system("Image_Text.py")
