@@ -54,16 +54,16 @@ To run the project you will need **Python 3** (the project was developed using *
 
 After having Python installed:
 
-**1.** Copy the Python files (**GetImages.py**, **NetworkTraining.py**, **HandGestureRecognition_Test.py**, **HandGestureRecognition.py** and **RunProject_CreateVENV.py**), together with **requirements.txt** and the **TrainedNeuralNetworks** folder to a directory in your computer (everithing should be in the the same directory).
+**1.** Copy the Python files (**GetImages.py**, **NetworkTraining.py**, **HandGestureRecognition_Test.py**, **HandGestureRecognition.py** and **RunProject_CreateVENV.py**), together with **requirements.txt** and the **TrainedNeuralNetworks** folder to a directory in your computer (everything should be in the the same directory).
 
-**2.** Run **RunProject_CreateVENV.py**. This file will create a virtual envvironment, install all the requirements listed in **requirements.txt** and then run **HandGestureRecognition.py**.
+**2.** Run **RunProject_CreateVENV.py**. This file will create a virtual environment, install all the requirements listed in **requirements.txt** and then run **HandGestureRecognition.py**.
 
 
 **Alternative option to run the project:**
 
-After following **step 1** of the list above, open the **Windows Command Prompt** and:
+After following **step 1** of the list above, open the **Windows Command Prompt** and run the following commands:
 
-**1.** Create and activate a virtual envvironment (optional):
+**1.** Create and activate a virtual environment (optional):
 > python -m venv HandGestureRecognition_venv
 
 > HandGestureRecognition_venv\Scripts\activate.bat
@@ -73,6 +73,32 @@ After following **step 1** of the list above, open the **Windows Command Prompt*
 
 **3.** Run **HandGestureRecognition.py**:
 > HandGestureRecognition.py
+
+
+## Testing the Neural Network
+
+In case you want to test the [**HandGestureRecognition_UpDownNone_20k.h5**](https://github.com/patrickmetzner/AI_HandGestureRecognition/blob/master/HandGestureRecognition/TrainedNeuralNetworks/HandGestureRecognition_UpDownNone_20k.h5) **Neural Network**, you can copy the [**images/**](https://github.com/patrickmetzner/AI_HandGestureRecognition/tree/master/HandGestureRecognition/images/testImages) folder to the **SAME DIRECTORY** where all the **.py** files are located and run **HandGestureRecognition_Test.py**.
+
+Inside the [**images/**](https://github.com/patrickmetzner/AI_HandGestureRecognition/tree/master/HandGestureRecognition/images/testImages) folder you can find 30 test images (10 for each image class). In relationship with the **.py** files, the images should be in the following paths:
+
+**..\images\testImages\noHand**
+**..\images\testImages\thumbsDown**
+**..\images\testImages\thumbsUp**
+
+---
+
+---
+
+To run **HandGestureRecognition_Test.py** you can open the **Windows Command Prompt** and run the following commands:
+
+**1.** Activate a virtual environment created previously (optional):
+> HandGestureRecognition_venv\Scripts\activate.bat
+
+**2.** Run **HandGestureRecognition_Test.py**:
+> HandGestureRecognition_Test.py
+
+Observation: If you opted to install the requirements locally in your computer, you can junt double click **HandGestureRecognition_Test.py**)
+
 
 
 In case you want to gather your own images and train your own **Neural Network**, you can
