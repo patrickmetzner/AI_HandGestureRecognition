@@ -17,7 +17,7 @@ import matplotlib.pyplot as plt
 # Global variables
 numberOfTrainingImages = 18000      # Must be multiple of len(imageLabels)
 numberOfValidationImages = 3000     # Must be multiple of len(imageLabels)
-numberOfTestImages = 210           # Must be multiple of len(imageLabels)
+numberOfTestImages = 1050           # Must be multiple of len(imageLabels)
 imageWidth = imageHeight = 224
 imageLabels = ["thumbsUp", "thumbsDown", "noHand"]
 
@@ -162,7 +162,7 @@ def plot_confusion_matrix(cm, classes, normalize=False, title='Confusion Matrix'
     plt.tight_layout()
     plt.ylabel('True label')
     plt.xlabel('Predicted label')
-
+    plt.show()
 
 plot_confusion_matrix(cm=myConfusionMatrix, classes=imageLabels, title='Confusion Matrix')
 

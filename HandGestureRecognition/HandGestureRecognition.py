@@ -49,7 +49,7 @@ while True:
 
     myNeuralNetwork_Output = myNeuralNetwork.predict(x=image_treated, steps=1, verbose=0)
     myNeuralNetwork_OutputArray[iterator] = np.argmax(myNeuralNetwork_Output)
-    imageLabelsIndex = np.mean(myNeuralNetwork_OutputArray)
+    imageLabelsIndex = round(np.mean(myNeuralNetwork_OutputArray))
     liveVideo = cv2.flip(liveVideo, 1)
     handGesture = imageLabels[int(imageLabelsIndex)]
     cv2.putText(liveVideo, handGesture, (5, 30), cv2.FONT_HERSHEY_COMPLEX, textSize, textColor, 2, cv2.LINE_AA)

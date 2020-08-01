@@ -9,30 +9,15 @@ import matplotlib.pyplot as plt
 imageWidth = imageHeight = 224
 imageLabels = ["thumbsUp", "thumbsDown", "noHand"]
 testPath = 'images/testImages'
+validationPath = 'images/validationImages'
 batchSize = 10
 testBatches = ImageDataGenerator(preprocessing_function=tf.keras.applications.vgg16.preprocess_input) \
-    .flow_from_directory(directory=testPath, target_size=(imageWidth, imageHeight),
+    .flow_from_directory(directory=validationPath, target_size=(imageWidth, imageHeight),
                          classes=imageLabels, batch_size=batchSize, shuffle=False)
 
 assert testBatches.num_classes == len(imageLabels)
 
 myNeuralNetwork = load_model('TrainedNeuralNetworks/HandGestureRecognition_UpDownNone_20k.h5')
-
-
-# Function to plot images in 1x10 grid to better visualize the data
-def plotImages(imagesArray):
-    figure, axes = plt.subplots(1, 10, figsize=(10, 2))
-    axes = axes.flatten()
-    for img, ax in zip(imagesArray, axes):
-        ax.imshow(img)
-        ax.axis('off')
-    plt.tight_layout()
-    plt.show()
-
-
-testImages, testLabels = next(testBatches)
-plotImages(testImages)
-print(testLabels)
 
 predictions = myNeuralNetwork.predict(x=testBatches, steps=len(testBatches), verbose=0)
 
@@ -63,7 +48,7 @@ def plot_confusion_matrix(cm, classes, normalize=False, title='Confusion Matrix'
     plt.tight_layout()
     plt.ylabel('True label')
     plt.xlabel('Predicted label')
-
+    plt.show()
 
 plot_confusion_matrix(cm=myConfusionMatrix, classes=imageLabels, title='Confusion Matrix')
 
