@@ -43,6 +43,8 @@ The training progress, as well as the **Confusion Matrix** can be seen below. Fo
 
 ---
 # How to run the project
->
+
+To run the project you will need **Python 3** (the project was developed using **Python 3.8.5**). To check your Python version you can run the Windows command below:
+> python --version
 
 In case you want to gather your own images and train your own **Neural Network**, you can
