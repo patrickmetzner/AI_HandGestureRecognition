@@ -1,8 +1,9 @@
 # AI_HandGestureRecognition
  
 This project is an **image classifier** capable of distinguishing, through the computer's built in WebCam, **three different classes**: 
-**1.** Positive hand gesture (thumbs up);
-**2.** Negative hand gesture (thumbs down);
+
+**1.** Positive hand gesture (thumbs up).
+**2.** Negative hand gesture (thumbs down).
 **3.** Absence of the previous classes (no hands).
 
 The code to run the **image classifier** can be found in [**HandGestureRecognition.py**](https://github.com/patrickmetzner/AI_HandGestureRecognition/blob/master/HandGestureRecognition/HandGestureRecognition.py). As seen below, this program will open the computer's WebCam and store the **tree latest frames** (area inside white rectangle) captured by the camera, then the **Neural Network** ([HandGestureRecognition_UpDownNone_20k.h5](https://github.com/patrickmetzner/AI_HandGestureRecognition/blob/master/HandGestureRecognition/TrainedNeuralNetworks/HandGestureRecognition_UpDownNone_20k.h5)) will predict the hand gestures for each frame. 
@@ -16,6 +17,7 @@ Observation: The option to analyse the latest three frames was made to minimise 
 # About the project
 
 This project is divided in four main files:
+
 **1.** [**GetImages.py**](https://github.com/patrickmetzner/AI_HandGestureRecognition/blob/master/HandGestureRecognition/GetImages.py);
     This program is responsible to gather the images that will be used to train and test the **Neural Network**. Each time the user press 's', a new batch of images will be saved with the label according to the text displayed on top of the video feed. Only the frame inside the white rectangle will be registered. Two GIF images showing the UI and the saved files can be found below.
 
@@ -46,5 +48,12 @@ The training progress, as well as the **Confusion Matrix** can be seen below. Fo
 
 To run the project you will need **Python 3** (the project was developed using **Python 3.8.5**). To check your Python version you can run the Windows command below:
 > python --version
+
+After having Python installed:
+
+**1.** Copy the Python files (**GetImages.py**, **NetworkTraining.py**, **HandGestureRecognition_Test.py**, **HandGestureRecognition.py** and **RunProject_CreateVENV.py**), together with **requirements.txt** and the **TrainedNeuralNetworks** folder to a directory in your computer (everithing should be in the the same directory).
+
+
+
 
 In case you want to gather your own images and train your own **Neural Network**, you can
