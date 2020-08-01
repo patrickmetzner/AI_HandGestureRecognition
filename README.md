@@ -75,6 +75,12 @@ After following **step 1** of the list above, open the **Windows Command Prompt*
 > HandGestureRecognition.py
 
 
+**ATENTION!** - Depending on your computer and camera settings, it might be necessary to change **line 22** of the code in **HandGestureRecognition.py** (image below).
+
+<img src="https://github.com/patrickmetzner/AI_HandGestureRecognition/blob/master/HandGestureRecognition/README_images/CameraCode.PNG">
+
+
+
 ## Testing the Neural Network
 
 In case you want to test the [**HandGestureRecognition_UpDownNone_20k.h5**](https://github.com/patrickmetzner/AI_HandGestureRecognition/blob/master/HandGestureRecognition/TrainedNeuralNetworks/HandGestureRecognition_UpDownNone_20k.h5) **Neural Network**, you can copy the [**images/**](https://github.com/patrickmetzner/AI_HandGestureRecognition/tree/master/HandGestureRecognition/images/testImages) folder to the **SAME DIRECTORY** where all the **.py** files are located and run **HandGestureRecognition_Test.py**.
@@ -113,3 +119,6 @@ The new Neural Network will be saved as **HandGestureRecognition_New.h5** inside
 To run **HandGestureRecognition.py** with your new Neural Network, change the name of the loaded Neural Network in **line 26** accordingly (image below).
 
 <img src="https://github.com/patrickmetzner/AI_HandGestureRecognition/blob/master/HandGestureRecognition/README_images/LoadNeuralNetwork.PNG">
+
+
+**ATENTION!** - Depending on your computer and camera settings, it might be necessary to change **line 22** of the code in **HandGestureRecognition.py** and **line 28** of the code in **GetImages.py** (image shown previously).
