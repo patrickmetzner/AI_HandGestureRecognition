@@ -3,8 +3,11 @@
 This project is an **image classifier** capable of distinguishing, through the computer's built in WebCam, **three different classes**: 
 
 **1.** Positive hand gesture (thumbs up).
+
 **2.** Negative hand gesture (thumbs down).
+
 **3.** Absence of the previous classes (no hands).
+
 
 The code to run the **image classifier** can be found in [**HandGestureRecognition.py**](https://github.com/patrickmetzner/AI_HandGestureRecognition/blob/master/HandGestureRecognition/HandGestureRecognition.py). As seen below, this program will open the computer's WebCam and store the **tree latest frames** (area inside white rectangle) captured by the camera, then the **Neural Network** ([HandGestureRecognition_UpDownNone_20k.h5](https://github.com/patrickmetzner/AI_HandGestureRecognition/blob/master/HandGestureRecognition/TrainedNeuralNetworks/HandGestureRecognition_UpDownNone_20k.h5)) will predict the hand gestures for each frame. 
 
