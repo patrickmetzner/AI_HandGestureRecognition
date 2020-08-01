@@ -105,7 +105,7 @@ In case you want to gather your own images and train your own **Neural Network**
 
 **Note that the total number of images gathered must be greater that the sum of these three variables.**
 
-<img src="https://github.com/patrickmetzner/AI_HandGestureRecognition/blob/master/HandGestureRecognition/README_images/TrainingVariables.PNG" width=200>
+<img src="https://github.com/patrickmetzner/AI_HandGestureRecognition/blob/master/HandGestureRecognition/README_images/TrainingVariables.PNG">
 
 
 The new Neural Network will be saved as **HandGestureRecognition_New.h5** inside the **TrainedNeuralNetworks** directory.
