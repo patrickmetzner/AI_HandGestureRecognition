@@ -25,7 +25,7 @@ This project is divided in four main files:
 
 **1.** [**GetImages.py**](https://github.com/patrickmetzner/AI_HandGestureRecognition/blob/master/HandGestureRecognition/GetImages.py):
     
-This program is responsible to gather the images that will be used to train and test the **Neural Network**. Each time the user press 's', a new batch of images will be saved with the label according to the text displayed on top of the video feed. Only the frame inside the white rectangle will be registered. Two GIF images showing the UI and the saved files can be found below.
+This program is responsible to gather the images that will be used to train and test the **Neural Network**. Each time the user presses 's', a new batch of images will be saved with the label according to the text displayed on top of the video feed. Only the frame inside the white rectangle will be registered. Two GIF images showing the UI and the saved files can be found below.
 
 **2.** [**NetworkTraining.py**](https://github.com/patrickmetzner/AI_HandGestureRecognition/blob/master/HandGestureRecognition/NeuralNetworkTraining.py):
     
