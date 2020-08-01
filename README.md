@@ -49,14 +49,30 @@ The training progress, as well as the **Confusion Matrix** can be seen below. Fo
 ---
 # How to run the project
 
-To run the project you will need **Python 3** (the project was developed using **Python 3.8.5**). To check your Python version you can run the Windows command below:
+To run the project you will need **Python 3** (the project was developed using **Python 3.8.5**). To check your Python version you can open the **Windows Command Prompt** and run command below:
 > python --version
 
 After having Python installed:
 
 **1.** Copy the Python files (**GetImages.py**, **NetworkTraining.py**, **HandGestureRecognition_Test.py**, **HandGestureRecognition.py** and **RunProject_CreateVENV.py**), together with **requirements.txt** and the **TrainedNeuralNetworks** folder to a directory in your computer (everithing should be in the the same directory).
 
+**2.** Run **RunProject_CreateVENV.py**. This file will create a virtual envvironment, install all the requirements listed in **requirements.txt** and then run **HandGestureRecognition.py**.
 
+
+**Alternative option to run the project:**
+
+After following **step 1** of the list above, open the **Windows Command Prompt** and:
+
+**1.** Create and activate a virtual envvironment (optional):
+> python -m venv HandGestureRecognition_venv
+
+> HandGestureRecognition_venv\Scripts\activate.bat
+
+**2.** Install the requirements listed in **requirements.txt** (if you choose to skip the previous step, the requirements will be installed locally in your computer):
+> pip install -r requirements.txt
+
+**3.** Run **HandGestureRecognition.py**:
+> HandGestureRecognition.py
 
 
 In case you want to gather your own images and train your own **Neural Network**, you can
