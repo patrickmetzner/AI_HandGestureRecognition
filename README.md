@@ -11,7 +11,7 @@
 
 <img src="https://github.com/patrickmetzner/AI_HandGestureRecognition/blob/master/HandGestureRecognition/README_images/NeuralNetwork_TrainingProgress.PNG"> 
 
-<img src="https://github.com/patrickmetzner/AI_HandGestureRecognition/blob/master/HandGestureRecognition/README_images/ConfusionMatrix.png" width=300>
+<img src="https://github.com/patrickmetzner/AI_HandGestureRecognition/blob/master/HandGestureRecognition/README_images/ConfusionMatrix.png">
 
 
 # How to run the project
