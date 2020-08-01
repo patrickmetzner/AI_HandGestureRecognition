@@ -17,7 +17,7 @@ import matplotlib.pyplot as plt
 # Global variables
 numberOfTrainingImages = 18000      # Must be multiple of len(imageLabels)
 numberOfValidationImages = 3000     # Must be multiple of len(imageLabels)
-numberOfTestImages = 1050           # Must be multiple of len(imageLabels)
+numberOfTestImages = 210           # Must be multiple of len(imageLabels)
 imageWidth = imageHeight = 224
 imageLabels = ["thumbsUp", "thumbsDown", "noHand"]
 
@@ -169,6 +169,6 @@ plot_confusion_matrix(cm=myConfusionMatrix, classes=imageLabels, title='Confusio
 if os.path.isdir('TrainedNeuralNetworks') is False:
     os.makedirs('TrainedNeuralNetworks')
 
-myNeuralNetwork.save('TrainedNeuralNetworks/HandGestureRecognition_UpDownNone_20k.h5')
+myNeuralNetwork.save('TrainedNeuralNetworks/HandGestureRecognition_UpDownNone.h5')
 
 # Run next program? os.system("Image_Text.py")

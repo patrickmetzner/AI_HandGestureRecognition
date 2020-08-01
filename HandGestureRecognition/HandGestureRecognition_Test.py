@@ -6,19 +6,17 @@ from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from sklearn.metrics import confusion_matrix
 import matplotlib.pyplot as plt
 
-numberOfTestImages = 30
 imageWidth = imageHeight = 224
 imageLabels = ["thumbsUp", "thumbsDown", "noHand"]
 testPath = 'images/testImages'
 batchSize = 10
 testBatches = ImageDataGenerator(preprocessing_function=tf.keras.applications.vgg16.preprocess_input) \
     .flow_from_directory(directory=testPath, target_size=(imageWidth, imageHeight),
-                         classes=["thumbsUp", "thumbsDown", "noHand"], batch_size=batchSize, shuffle=False)
+                         classes=imageLabels, batch_size=batchSize, shuffle=False)
 
-assert testBatches.n == numberOfTestImages
 assert testBatches.num_classes == len(imageLabels)
 
-myNeuralNetwork = load_model('TrainedNeuralNetworks/HandGestureRecognition_UpDownNone_v2.h5')
+myNeuralNetwork = load_model('TrainedNeuralNetworks/HandGestureRecognition_UpDownNone_20k.h5')
 
 
 # Function to plot images in 1x10 grid to better visualize the data
