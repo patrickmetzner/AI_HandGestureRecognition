@@ -33,25 +33,24 @@ textSize = 1
 textColor = (255, 255, 255)  # BGR color
 numberOfFramesAnalyzed = 3
 myNeuralNetwork_OutputArray = np.zeros((numberOfFramesAnalyzed,), dtype=int)
+iterator = 0
 while True:
-    for numberOfFrames in range(numberOfFramesAnalyzed):
-        success, liveVideo = videoCapture.read()
-        cv2.rectangle(liveVideo, (0, 0), (videoCaptureWidth, 40), (0, 0, 0), -1)
-        cv2.rectangle(liveVideo,
-                      (int(rectanglePoint1[0]), int(rectanglePoint1[1])),
-                      (int(rectanglePoint2[0]), int(rectanglePoint2[1])),
-                      (255, 255, 255), 2)
-        image_raw = liveVideo[int(rectanglePoint1[1]):int(rectanglePoint2[1]), int(rectanglePoint1[0]):int(rectanglePoint2[0])]
-        image_resized = cv2.resize(image_raw, (imageWidth, imageHeight))
-        cv2.imwrite("liveVideo/liveVideo/liveVideo" + str(numberOfFrames) + ".jpg", image_resized)
-        image_treated = ImageDataGenerator(preprocessing_function=tf.keras.applications.vgg16.preprocess_input) \
-            .flow_from_directory(directory='liveVideo', target_size=(imageWidth, imageHeight), batch_size=1, shuffle=False)
+    success, liveVideo = videoCapture.read()
+    cv2.rectangle(liveVideo, (0, 0), (videoCaptureWidth, 40), (0, 0, 0), -1)
+    cv2.rectangle(liveVideo,
+                  (int(rectanglePoint1[0]), int(rectanglePoint1[1])),
+                  (int(rectanglePoint2[0]), int(rectanglePoint2[1])),
+                  (255, 255, 255), 2)
+    image_raw = liveVideo[int(rectanglePoint1[1]):int(rectanglePoint2[1]), int(rectanglePoint1[0]):int(rectanglePoint2[0])]
+    image_resized = cv2.resize(image_raw, (imageWidth, imageHeight))
+    cv2.imwrite("liveVideo/liveVideo/liveVideo" + str(iterator) + ".jpg", image_resized)
+    image_treated = ImageDataGenerator(preprocessing_function=tf.keras.applications.vgg16.preprocess_input) \
+        .flow_from_directory(directory='liveVideo', target_size=(imageWidth, imageHeight), batch_size=1, shuffle=False)
 
-        myNeuralNetwork_Output = myNeuralNetwork.predict(x=image_treated, steps=1, verbose=0)
-        myNeuralNetwork_OutputArray[numberOfFrames] = np.argmax(myNeuralNetwork_Output)
-
-    liveVideo = cv2.flip(liveVideo, 1)
+    myNeuralNetwork_Output = myNeuralNetwork.predict(x=image_treated, steps=1, verbose=0)
+    myNeuralNetwork_OutputArray[iterator] = np.argmax(myNeuralNetwork_Output)
     imageLabelsIndex = np.mean(myNeuralNetwork_OutputArray)
+    liveVideo = cv2.flip(liveVideo, 1)
     handGesture = imageLabels[int(imageLabelsIndex)]
     cv2.putText(liveVideo, handGesture, (5, 30), cv2.FONT_HERSHEY_COMPLEX, textSize, textColor, 2, cv2.LINE_AA)
     cv2.imshow("Video Capture", liveVideo)
@@ -59,3 +58,7 @@ while True:
     keyPressed = cv2.waitKey(10)
     if keyPressed == ord('q'):
         break
+
+    iterator += 1
+    if iterator == numberOfFramesAnalyzed:
+        iterator = 0
