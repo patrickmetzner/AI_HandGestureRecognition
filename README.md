@@ -25,7 +25,7 @@ This project is divided in four main files:
 
 **1.** [**GetImages.py**](https://github.com/patrickmetzner/AI_HandGestureRecognition/blob/master/HandGestureRecognition/GetImages.py):
     
-This program is responsible to gather the images that will be used to train and test the **Neural Network**. Each time the user presses 's', a new batch of images will be saved with the label according to the text displayed on top of the video feed. Only the frame inside the white rectangle will be registered. Two GIF images showing the UI and the saved files can be found below.
+This program is responsible to gather the images that will be used to train and test the **Neural Network**. Each time the user presses 's', a new batch of images will be saved with the label according to the text displayed on top of the video feed. Only the frame inside the white rectangle will be registered. Two GIF images showing the UI, as well as the saved files can be found below.
 
 **2.** [**NetworkTraining.py**](https://github.com/patrickmetzner/AI_HandGestureRecognition/blob/master/HandGestureRecognition/NeuralNetworkTraining.py):
     
@@ -37,7 +37,7 @@ This program can be used to test a **trained Neural Network**, using the images 
 
 **4.** [**HandGestureRecognition.py**](https://github.com/patrickmetzner/AI_HandGestureRecognition/blob/master/HandGestureRecognition/HandGestureRecognition.py):
     
-This is the program used to recognize the three classes previously mentioned. A brief explanation, together with two GIF images can be found in the first section of this file.
+This is the program used to recognise the three classes previously mentioned. A brief explanation, together with two GIF images can be found in the first section of this file.
 
 
 <img src="https://github.com/patrickmetzner/AI_HandGestureRecognition/blob/master/HandGestureRecognition/README_images/GetImages.gif" width=350> <img src="https://github.com/patrickmetzner/AI_HandGestureRecognition/blob/master/HandGestureRecognition/README_images/imageFiles.gif" width=350>
