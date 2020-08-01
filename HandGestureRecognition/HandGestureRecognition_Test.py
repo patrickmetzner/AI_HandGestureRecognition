@@ -12,7 +12,7 @@ testPath = 'images/testImages'
 validationPath = 'images/validationImages'
 batchSize = 10
 testBatches = ImageDataGenerator(preprocessing_function=tf.keras.applications.vgg16.preprocess_input) \
-    .flow_from_directory(directory=validationPath, target_size=(imageWidth, imageHeight),
+    .flow_from_directory(directory=testPath, target_size=(imageWidth, imageHeight),
                          classes=imageLabels, batch_size=batchSize, shuffle=False)
 
 assert testBatches.num_classes == len(imageLabels)
