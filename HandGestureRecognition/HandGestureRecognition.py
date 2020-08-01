@@ -7,7 +7,6 @@ from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from sklearn.metrics import confusion_matrix
 import matplotlib.pyplot as plt
 
-
 # Global variables
 imageLabels = ["thumbsUp", "thumbsDown", "noHand"]
 videoCaptureWidth = 640
