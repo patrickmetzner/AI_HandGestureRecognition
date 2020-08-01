@@ -23,19 +23,19 @@ Observation: The option to analyse the latest three frames was made to minimise 
 
 This project is divided in four main files:
 
-**1.** [**GetImages.py**](https://github.com/patrickmetzner/AI_HandGestureRecognition/blob/master/HandGestureRecognition/GetImages.py);
+**1.** [**GetImages.py**](https://github.com/patrickmetzner/AI_HandGestureRecognition/blob/master/HandGestureRecognition/GetImages.py):
     
 This program is responsible to gather the images that will be used to train and test the **Neural Network**. Each time the user press 's', a new batch of images will be saved with the label according to the text displayed on top of the video feed. Only the frame inside the white rectangle will be registered. Two GIF images showing the UI and the saved files can be found below.
 
-**2.** [**NetworkTraining.py**](https://github.com/patrickmetzner/AI_HandGestureRecognition/blob/master/HandGestureRecognition/NeuralNetworkTraining.py);
+**2.** [**NetworkTraining.py**](https://github.com/patrickmetzner/AI_HandGestureRecognition/blob/master/HandGestureRecognition/NeuralNetworkTraining.py):
     
 This program will organise the images collected by the previous program and train a **Convolutional Neural Network** to recognise the three classes mentioned in the previous section. The evolution of the training after each **epoch** can be seen in the terminal window and, at the end, a **Confusion Matrix** will represent the accuracy of the predictions made by the **trained Neural Network** when taking the images in the **images/testImages** directory as input. A better explanation about the evolution of the training and testing of the [**HandGestureRecognition_UpDownNone_20k.h5**](https://github.com/patrickmetzner/AI_HandGestureRecognition/blob/master/HandGestureRecognition/TrainedNeuralNetworks/HandGestureRecognition_UpDownNone_20k.h5) **Neural Network** can be found at the end of this section. 
 
-**3.** [**HandGestureRecognition_Test.py**](https://github.com/patrickmetzner/AI_HandGestureRecognition/blob/master/HandGestureRecognition/HandGestureRecognition_Test.py);
+**3.** [**HandGestureRecognition_Test.py**](https://github.com/patrickmetzner/AI_HandGestureRecognition/blob/master/HandGestureRecognition/HandGestureRecognition_Test.py):
     
 This program can be used to test a **trained Neural Network**, using the images in the **images/testImages** directory as input and visualise its **Confusion Matrix** without the need of running **NetworkTraining.py** (NetworkTraining.py can take a long time to finish running).
 
-**4.** [**HandGestureRecognition.py**](https://github.com/patrickmetzner/AI_HandGestureRecognition/blob/master/HandGestureRecognition/HandGestureRecognition.py);
+**4.** [**HandGestureRecognition.py**](https://github.com/patrickmetzner/AI_HandGestureRecognition/blob/master/HandGestureRecognition/HandGestureRecognition.py):
     
 This is the program used to recognize the three classes previously mentioned. A brief explanation, together with two GIF images can be found in the first section of this file.
 
