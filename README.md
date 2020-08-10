@@ -155,6 +155,7 @@ To test the **Neural Network**, you can run the following command in the contain
 ----
 
 **Observations:**
+
 **1.** When running this container on Windows, you need the **XLaunch** app in order for the container to access the computer's display.
 
 The app is part of the **VcXsrv Windows X Server** and can be downloaded [here](https://sourceforge.net/projects/vcxsrv/).
