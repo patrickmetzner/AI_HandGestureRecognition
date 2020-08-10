@@ -164,5 +164,5 @@ The app is part of the **VcXsrv Windows X Server** and can be downloaded [here](
 
 **2.** Just the **HandGestureRecognition_Test.py** script will work on Windows. The other scripts need to access the computer's WebCam and the container is not set up to that (yet).
 
-on Linux, it might be possible to overcome this problem with the following command: (note that I have not tested this command yet)
+On Linux, it might be possible to overcome this problem with the following command: (note that I have not tested this command yet)
 > docker run -it -e DISPLAY=[HOST IP ADDRESS]:0 **--device=/dev/video0:/dev/video0** --name hand-gesture-recognition-container patrickmetzner/hand-gesture-recognition-container
