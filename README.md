@@ -130,3 +130,38 @@ To run **HandGestureRecognition.py** with your new Neural Network, change the na
 
 
 **ATTENTION!** - Depending on your computer and camera settings, it might be necessary to change **line 22** of the code in **HandGestureRecognition.py** and **line 28** of the code in **GetImages.py** (image shown previously).
+
+
+# Docker container (work in progress)
+
+A Docker container was generated with the files and settings needed to run this project. It can be accessed by the following commands:
+
+**1.** Pull the container image from DockerHub: 
+> docker pull patrickmetzner/hand-gesture-recognition-container 
+
+**2.** Use the pulled image to run a docker container in interactive mode:
+> docker run -it -e DISPLAY=**[HOST IP ADDRESS]**:0 --name hand-gesture-recognition-container hand-gesture-recognition-image
+
+Note that you need to enter the digits of your computer's IP address in place of **[HOST IP ADDRESS]** in order for the container to access the computer's display. On Windows, the IP address can be quickly found with the following command:
+> ipconfig
+
+Look for the **IPv4 Address**. It should be something like: XXX.XXX.X.XX 
+
+**3.** The container's bash command is ready to be used. 
+
+To test the **Neural Network**, you can run the following command in the container's CLI:
+> python HandGestureRecognition_Test.py
+
+----
+
+**Observations:**
+**1.** When running this container on Windows, you need the **XLaunch** app in order for the container to access the computer's display.
+
+The app is part of the **VcXsrv Windows X Server** and can be downloaded [here](https://sourceforge.net/projects/vcxsrv/).
+
+**When running XLaunch, make sure to check the "Disable access control" box at the "Extra settings" window.**
+
+**2.** Just the **HandGestureRecognition_Test.py** script will work on Windows. The other scripts need to access the computer's WebCam and the container is not set up to that (yet).
+
+on Linux, it might be possible to overcome this problem with the following command: (note that I have not tested this command yet)
+> docker run -it -e DISPLAY=[HOST IP ADDRESS]:0 **--device=/dev/video0:/dev/video0** --name hand-gesture-recognition-container hand-gesture-recognition-image
