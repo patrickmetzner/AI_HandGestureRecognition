@@ -140,7 +140,7 @@ A Docker container was generated with the files and settings needed to run this 
 > docker pull patrickmetzner/hand-gesture-recognition-container 
 
 **2.** Use the pulled image to run a docker container in interactive mode:
-> docker run -it -e DISPLAY=**[HOST IP ADDRESS]**:0 --name hand-gesture-recognition-container hand-gesture-recognition-image
+> docker run -it -e DISPLAY=**[HOST IP ADDRESS]**:0 --name hand-gesture-recognition-container patrickmetzner/hand-gesture-recognition-container
 
 Note that you need to enter the digits of your computer's IP address in place of **[HOST IP ADDRESS]** in order for the container to access the computer's display. On Windows, the IP address can be quickly found with the following command:
 > ipconfig
@@ -164,4 +164,4 @@ The app is part of the **VcXsrv Windows X Server** and can be downloaded [here](
 **2.** Just the **HandGestureRecognition_Test.py** script will work on Windows. The other scripts need to access the computer's WebCam and the container is not set up to that (yet).
 
 on Linux, it might be possible to overcome this problem with the following command: (note that I have not tested this command yet)
-> docker run -it -e DISPLAY=[HOST IP ADDRESS]:0 **--device=/dev/video0:/dev/video0** --name hand-gesture-recognition-container hand-gesture-recognition-image
+> docker run -it -e DISPLAY=[HOST IP ADDRESS]:0 **--device=/dev/video0:/dev/video0** --name hand-gesture-recognition-container patrickmetzner/hand-gesture-recognition-container
